@@ -15,6 +15,8 @@ func worker(done chan bool) {
 func main() {
 	done := make(chan bool, 1)
 	go worker(done)
+	time.Sleep(time.Millisecond * 500)
+	fmt.Println("doing something")
 	<-done
 
 }
