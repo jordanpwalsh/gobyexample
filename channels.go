@@ -7,8 +7,12 @@ func main() {
 
 	go func() {
 		messages <- "ping"
+		messages <- "ping2"
 	}()
 
 	msg := <-messages
+	fmt.Println(msg)
+
+	msg = <-messages
 	fmt.Println(msg)
 }
